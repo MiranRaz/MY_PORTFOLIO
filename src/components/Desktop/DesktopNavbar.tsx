@@ -1,16 +1,22 @@
 import { useEffect, useState } from "react";
 // mui
-import { AppBar, Box, Toolbar, Button } from "@mui/material";
+import { AppBar, Box, Toolbar } from "@mui/material";
 // style
 import { NavButton } from "./style.ts";
 //assets
 import logo_dark from "../../assets/global/logo_dark.png";
+import logo_light from "../../assets/global/logo_light.png";
 import info from "../../assets/desktop/info.png";
 import mac from "../../assets/desktop/mac.png";
 
 const DesktopNavbar = () => {
-  const [currentTime, setCurrentTime] = useState("");
+  const [isHovered, setIsHovered] = useState(false);
 
+  const handleHover = () => {
+    setIsHovered(!isHovered);
+  };
+
+  const [currentTime, setCurrentTime] = useState("");
   useEffect(() => {
     // Function to update the current time with AM/PM
     const updateTime = () => {
@@ -57,13 +63,17 @@ const DesktopNavbar = () => {
           }}
         >
           <Box sx={{ display: "flex", alignItems: "center" }}>
-            <Button sx={{ mr: 2, ml: 2 }}>
+            <NavButton
+              sx={{ mr: 2, ml: 2 }}
+              onMouseEnter={handleHover}
+              onMouseLeave={handleHover}
+            >
               <img
-                src={logo_dark}
+                src={isHovered ? logo_light : logo_dark}
                 alt=""
                 style={{ maxHeight: "40px", maxWidth: "25px" }}
               />
-            </Button>
+            </NavButton>
             <NavButton>About</NavButton>
             <NavButton>Projects</NavButton>
             <NavButton>Skills</NavButton>
@@ -71,20 +81,20 @@ const DesktopNavbar = () => {
           </Box>
           <Box sx={{ display: "flex", alignItems: "center" }}>
             <NavButton>{currentTime}</NavButton>
-            <Button>
+            <NavButton>
               <img
                 src={info}
                 alt=""
                 style={{ maxHeight: "40px", maxWidth: "25px" }}
               />
-            </Button>
-            <Button>
+            </NavButton>
+            <NavButton>
               <img
                 src={mac}
                 alt=""
                 style={{ maxHeight: "40px", maxWidth: "25px" }}
               />
-            </Button>
+            </NavButton>
           </Box>
         </Toolbar>
       </AppBar>

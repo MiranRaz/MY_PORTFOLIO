@@ -7,6 +7,28 @@ const StyledBackgroundGrid = styled(Grid)`
   background-size: cover;
   width: 100vw;
   height: 100vh;
+  z-index: 10;
+  position: relative;
+`;
+
+const ImageDesktopGrid = styled(Grid)`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  z-index: 1; /* Increase the z-index */
+`;
+
+const DesktopButtonContainer = styled(Grid)`
+  display: flex;
+  flex-direction: column !important;
+  justify-content: space-between;
+  align-items: flex-end;
+  z-index: 2;
+  height: 80vh;
+  padding-right: 48px;
 `;
 
 const NavButton = styled(Button)`
@@ -14,10 +36,33 @@ const NavButton = styled(Button)`
   background-color: white;
   overflow: hidden;
   border-radius: 0 !important;
-
+  height: 39px;
+  z-index: 2;
   &:hover {
     background-color: black !important;
     color: white !important;
   }
 `;
-export { StyledBackgroundGrid, NavButton };
+
+const DesktopButton = styled(Button)`
+  background-color: white;
+  border-radius: 0 !important;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 99px;
+
+  &:hover {
+    background-color: gray !important;
+    color: white !important;
+  }
+`;
+
+export {
+  DesktopButtonContainer,
+  StyledBackgroundGrid,
+  ImageDesktopGrid,
+  NavButton,
+  DesktopButton,
+};
