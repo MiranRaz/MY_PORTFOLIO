@@ -63,11 +63,7 @@ const DesktopNavbar = () => {
           }}
         >
           <Box sx={{ display: "flex", alignItems: "center" }}>
-            <NavButton
-              sx={{ mr: 2, ml: 2 }}
-              onMouseEnter={handleHover}
-              onMouseLeave={handleHover}
-            >
+            <NavButton onMouseEnter={handleHover} onMouseLeave={handleHover}>
               <img
                 src={isHovered ? logo_light : logo_dark}
                 alt=""

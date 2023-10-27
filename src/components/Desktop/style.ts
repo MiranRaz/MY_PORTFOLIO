@@ -18,7 +18,7 @@ const ImageDesktopGrid = styled(Grid)`
   height: 100vh;
   width: 100vw;
   position: absolute;
-  z-index: 1; /* Increase the z-index */
+  z-index: 1;
 `;
 
 const DesktopButtonContainer = styled(Grid)`
