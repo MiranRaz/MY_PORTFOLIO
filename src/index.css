@@ -7,3 +7,12 @@ img {
   -moz-user-select: none;
   user-select: none;
 }
+@font-face {
+  font-family: "ChicagoFLF";
+  src: url("./font/ChicagoFLF.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+* {
+  font-family: "ChicagoFLF", sans-serif !important;
+}

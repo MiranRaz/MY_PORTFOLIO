@@ -38,6 +38,8 @@ const NavButton = styled(Button)`
   border-radius: 0 !important;
   height: 39px;
   z-index: 2;
+  text-transform: none !important;
+
   &:hover {
     background-color: black !important;
     color: white !important;
@@ -52,6 +54,7 @@ const DesktopButton = styled(Button)`
   justify-content: center;
   flex-direction: column;
   width: 99px;
+  text-transform: none !important;
 
   &:hover {
     background-color: gray !important;
