@@ -8,8 +8,10 @@ import logo_dark from "../../../assets/global/logo_dark.png";
 import logo_light from "../../../assets/global/logo_light.png";
 import info from "../../../assets/desktop/info.png";
 import mac from "../../../assets/desktop/mac.png";
-import About from "../DesktopPage/About.tsx";
-import Projects from "../DesktopPage/Projects.tsx";
+import About from "./About.tsx";
+import Projects from "./Projects.tsx";
+import Skills from "./Skills.tsx";
+import Contact from "./Contact.tsx";
 
 const DesktopNavbar = () => {
   const [isHovered, setIsHovered] = useState(false);
@@ -69,6 +71,7 @@ const DesktopNavbar = () => {
             <NavButton
               onMouseEnter={() => setIsHovered(!isHovered)}
               onMouseLeave={() => setIsHovered(!isHovered)}
+              sx={{ justifyContent: "center !important" }}
             >
               <img
                 src={isHovered ? logo_light : logo_dark}
@@ -78,20 +81,20 @@ const DesktopNavbar = () => {
             </NavButton>
             <About />
             <Projects />
-            <NavButton>Skills</NavButton>
-            <NavButton>Contact</NavButton>
+            <Skills />
+            <Contact />
           </Box>
           {/*navbar end*/}
           <Box sx={{ display: "flex", alignItems: "center" }}>
             <NavButton>{currentTime}</NavButton>
-            <NavButton>
+            <NavButton sx={{ justifyContent: "center !important" }}>
               <img
                 src={info}
                 alt=""
                 style={{ maxHeight: "40px", maxWidth: "25px" }}
               />
             </NavButton>
-            <NavButton>
+            <NavButton sx={{ justifyContent: "center !important" }}>
               <img
                 src={mac}
                 alt=""

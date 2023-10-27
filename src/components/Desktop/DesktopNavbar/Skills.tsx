@@ -1,9 +1,9 @@
 import { useState } from "react";
-import { Box } from "@mui/material";
+import { Box, Divider } from "@mui/material";
 import { NavButton } from "../style.ts";
 import { ClickAwayListener } from "@mui/base/ClickAwayListener";
 
-const Projects = () => {
+const Skills = () => {
   const [isVisible, setIsVisible] = useState(false);
 
   return (
@@ -14,7 +14,7 @@ const Projects = () => {
             setIsVisible(!isVisible);
           }}
         >
-          Projects
+          Skills
         </NavButton>
         {/*dropdown items*/}
         <Box
@@ -26,17 +26,20 @@ const Projects = () => {
             border: "2px solid black",
             position: "absolute",
             top: "35px",
-            left: "151px",
+            left: "236px",
             zIndex: "10",
           }}
         >
+          <Divider sx={{ fontSize: "12px", paddingTop: "8px" }}>
+            Front-end
+          </Divider>
           <NavButton
             sx={{ zIndex: "2", width: "100%" }}
             onClick={() => {
               setIsVisible(false);
             }}
           >
-            Judo club Sarajevo
+            HTML & CSS
           </NavButton>
           <NavButton
             sx={{ zIndex: "2", width: "100%" }}
@@ -44,7 +47,7 @@ const Projects = () => {
               setIsVisible(false);
             }}
           >
-            "Nas Film" Production
+            React
           </NavButton>
           <NavButton
             sx={{ zIndex: "2", width: "100%" }}
@@ -52,7 +55,7 @@ const Projects = () => {
               setIsVisible(false);
             }}
           >
-            Macbeth band
+            Next.js
           </NavButton>
           <NavButton
             sx={{ zIndex: "2", width: "100%" }}
@@ -60,7 +63,7 @@ const Projects = () => {
               setIsVisible(false);
             }}
           >
-            Travel App
+            Gatsby
           </NavButton>
           <NavButton
             sx={{ zIndex: "2", width: "100%" }}
@@ -68,7 +71,29 @@ const Projects = () => {
               setIsVisible(false);
             }}
           >
-            The Base
+            Material-UI
+          </NavButton>
+          <Divider sx={{ fontSize: "12px", paddingTop: "8px" }}>
+            Back-end
+          </Divider>
+          <NavButton
+            sx={{ zIndex: "2", width: "100%" }}
+            onClick={() => {
+              setIsVisible(false);
+            }}
+          >
+            .NET
+          </NavButton>
+          <Divider sx={{ fontSize: "12px", paddingTop: "8px" }}>
+            Databases
+          </Divider>
+          <NavButton
+            sx={{ zIndex: "2", width: "100%" }}
+            onClick={() => {
+              setIsVisible(false);
+            }}
+          >
+            MSSQL
           </NavButton>
           <NavButton
             sx={{ zIndex: "2", width: "100%" }}
@@ -76,7 +101,16 @@ const Projects = () => {
               setIsVisible(false);
             }}
           >
-            BMW
+            Docker
+          </NavButton>
+          <Divider sx={{ fontSize: "12px", paddingTop: "8px" }}>Other</Divider>
+          <NavButton
+            sx={{ zIndex: "2", width: "100%" }}
+            onClick={() => {
+              setIsVisible(false);
+            }}
+          >
+            GIT
           </NavButton>
           <NavButton
             sx={{ zIndex: "2", width: "100%" }}
@@ -84,7 +118,7 @@ const Projects = () => {
               setIsVisible(false);
             }}
           >
-            bloola Factory
+            Photoshop
           </NavButton>
         </Box>
       </Box>
@@ -92,4 +126,4 @@ const Projects = () => {
   );
 };
 
-export default Projects;
+export default Skills;
