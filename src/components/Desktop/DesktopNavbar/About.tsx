@@ -13,6 +13,7 @@ const About = () => {
           onClick={() => {
             setIsVisible(!isVisible);
           }}
+          isVisible={isVisible} // Pass the isVisible state as a prop
         >
           About
         </NavButton>

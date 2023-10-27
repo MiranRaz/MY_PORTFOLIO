@@ -31,9 +31,15 @@ const DesktopButtonContainer = styled(Grid)`
   padding-right: 48px;
 `;
 
-const NavButton = styled(Button)`
-  color: black !important;
-  background-color: white;
+// nav buttons with props that you send
+type ButtonProps = {
+  isVisible: boolean;
+};
+const NavButton = styled(Button)<ButtonProps>`
+  color: ${(props) =>
+    props.isVisible ? "white !important" : "black !important"};
+  background-color: ${(props) =>
+    props.isVisible ? "black !important" : "white"};
   overflow: hidden;
   border-radius: 0 !important;
   height: 37px;
@@ -42,8 +48,10 @@ const NavButton = styled(Button)`
   justify-content: flex-start !important;
 
   &:hover {
-    background-color: black !important;
-    color: white !important;
+    background-color: ${(props) =>
+      props.isVisible ? "white !important" : "black !important"};
+    color: ${(props) =>
+      props.isVisible ? "black !important" : "white !important"};
   }
 `;
 

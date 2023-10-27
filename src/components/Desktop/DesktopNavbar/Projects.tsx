@@ -13,6 +13,7 @@ const Projects = () => {
           onClick={() => {
             setIsVisible(!isVisible);
           }}
+          isVisible={isVisible} // Pass the isVisible state as a prop
         >
           Projects
         </NavButton>
