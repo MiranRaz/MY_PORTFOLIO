@@ -5,7 +5,7 @@ import {
   DesktopButtonContainer,
 } from "../style.ts";
 // assets
-import DesktopNavbar from "../DesktopNavbar.tsx";
+import DesktopNavbar from "../DesktopNavbar/DesktopNavbar.tsx";
 import logo_dark from "../../../assets/global/logo_dark.png";
 import folder from "../../../assets/desktop/folder.png";
 import MCHD from "../../../assets/desktop/MCHD.png";

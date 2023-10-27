@@ -2,19 +2,17 @@ import { useEffect, useState } from "react";
 // mui
 import { AppBar, Box, Toolbar } from "@mui/material";
 // style
-import { NavButton } from "./style.ts";
+import { NavButton } from "../style.ts";
 //assets
-import logo_dark from "../../assets/global/logo_dark.png";
-import logo_light from "../../assets/global/logo_light.png";
-import info from "../../assets/desktop/info.png";
-import mac from "../../assets/desktop/mac.png";
+import logo_dark from "../../../assets/global/logo_dark.png";
+import logo_light from "../../../assets/global/logo_light.png";
+import info from "../../../assets/desktop/info.png";
+import mac from "../../../assets/desktop/mac.png";
+import About from "../DesktopPage/About.tsx";
+import Projects from "../DesktopPage/Projects.tsx";
 
 const DesktopNavbar = () => {
   const [isHovered, setIsHovered] = useState(false);
-
-  const handleHover = () => {
-    setIsHovered(!isHovered);
-  };
 
   const [currentTime, setCurrentTime] = useState("");
   useEffect(() => {
@@ -51,7 +49,7 @@ const DesktopNavbar = () => {
           display: "flex",
           backgroundColor: "white",
           color: "black",
-          border: "1.5px solid black",
+          border: "2px solid black",
         }}
       >
         <Toolbar
@@ -62,19 +60,28 @@ const DesktopNavbar = () => {
             justifyContent: "space-between", // Add this line to move content to the left and add space between buttons
           }}
         >
-          <Box sx={{ display: "flex", alignItems: "center" }}>
-            <NavButton onMouseEnter={handleHover} onMouseLeave={handleHover}>
+          {/*navbar start*/}
+          <Box
+            sx={{
+              display: "flex",
+            }}
+          >
+            <NavButton
+              onMouseEnter={() => setIsHovered(!isHovered)}
+              onMouseLeave={() => setIsHovered(!isHovered)}
+            >
               <img
                 src={isHovered ? logo_light : logo_dark}
                 alt=""
                 style={{ maxHeight: "40px", maxWidth: "25px" }}
               />
             </NavButton>
-            <NavButton>About</NavButton>
-            <NavButton>Projects</NavButton>
+            <About />
+            <Projects />
             <NavButton>Skills</NavButton>
             <NavButton>Contact</NavButton>
           </Box>
+          {/*navbar end*/}
           <Box sx={{ display: "flex", alignItems: "center" }}>
             <NavButton>{currentTime}</NavButton>
             <NavButton>
