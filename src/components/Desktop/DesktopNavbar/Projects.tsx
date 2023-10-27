@@ -106,14 +106,6 @@ const Projects = () => {
               setIsVisible(false);
             }}
           >
-            Tic-Tac-Toe
-          </NavButton>
-          <NavButton
-            sx={{ zIndex: "2", width: "100%" }}
-            onClick={() => {
-              setIsVisible(false);
-            }}
-          >
             Theme switch
           </NavButton>
           <NavButton
@@ -147,6 +139,15 @@ const Projects = () => {
             }}
           >
             Image reveal
+          </NavButton>
+          <Divider sx={{ fontSize: "12px" }}>Games</Divider>
+          <NavButton
+            sx={{ zIndex: "2", width: "100%" }}
+            onClick={() => {
+              setIsVisible(false);
+            }}
+          >
+            Tic-Tac-Toe
           </NavButton>
         </Box>
       </Box>
