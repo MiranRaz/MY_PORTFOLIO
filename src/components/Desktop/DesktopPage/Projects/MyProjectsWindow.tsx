@@ -19,6 +19,7 @@ import bloola from "../../../../assets/global/bloola.png";
 import bbk from "../../../../assets/global/bbk.jpg";
 import theme from "../../../../assets/global/theme.png";
 import language from "../../../../assets/global/language.png";
+import scrollable from "../../../../assets/global/scrollable.png";
 
 interface MyProjectsProps {
   displayMyProjectsWindow: boolean;
@@ -316,6 +317,33 @@ const MyProjectsWindow: React.FC<MyProjectsProps> = ({
                 }}
               >
                 Language switch
+              </div>
+            </DesktopButton>
+            <DesktopButton
+              disableRipple
+              onDoubleClick={() => {
+                setDisplayMyProjectsWindow(true);
+              }}
+              isActive={displayMyProjectsWindow}
+              sx={{ marginRight: "24px" }}
+            >
+              <img
+                src={scrollable}
+                alt="scrollable"
+                style={{
+                  height: "44px",
+                  paddingBottom: "8px",
+                }}
+              />
+              <div
+                style={{
+                  backgroundColor: "white",
+                  color: "black",
+                  width: "99px",
+                  fontSize: "12px",
+                }}
+              >
+                Scrollable section
               </div>
             </DesktopButton>
           </Grid>
