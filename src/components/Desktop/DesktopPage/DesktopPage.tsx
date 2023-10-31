@@ -10,11 +10,31 @@ import logo_dark from "../../../assets/global/logo_dark.png";
 import folder from "../../../assets/desktop/folder.png";
 import MCHD from "../../../assets/desktop/MCHD.png";
 import trash from "../../../assets/desktop/trash.png";
+import MrhdWindow from "./MRHDWindow.tsx";
+import { useState } from "react";
+import MyProjectsWindow from "./MyProjectsWindow.tsx";
+import AboutWindow from "./AboutWindow.tsx"; // Import the Draggable component
 
 const DesktopPage = () => {
+  const [displayMRWindow, setDisplayMRWindow] = useState(false);
+  const [displayMyProjectsWindow, setDisplayMyProjectsWindow] = useState(false);
+  const [displayAboutMeWindow, setDisplayAboutMeWindow] = useState(false);
+
   return (
     <StyledBackgroundGrid container>
       <DesktopNavbar />
+      <MrhdWindow
+        displayMRWindow={displayMRWindow}
+        setDisplayMRWindow={setDisplayMRWindow}
+      />
+      <MyProjectsWindow
+        displayMyProjectsWindow={displayMyProjectsWindow}
+        setDisplayMyProjectsWindow={setDisplayMyProjectsWindow}
+      />
+      <AboutWindow
+        displayAboutMeWindow={displayAboutMeWindow}
+        setDisplayAboutMeWindow={setDisplayAboutMeWindow}
+      />
       <ImageDesktopGrid>
         <img
           src={logo_dark}
@@ -26,7 +46,13 @@ const DesktopPage = () => {
         />
       </ImageDesktopGrid>
       <DesktopButtonContainer container>
-        <DesktopButton>
+        <DesktopButton
+          disableRipple
+          onDoubleClick={() => {
+            setDisplayMRWindow(true);
+          }}
+          isActive={displayMRWindow}
+        >
           <img
             src={MCHD}
             alt="hard disk"
@@ -46,7 +72,13 @@ const DesktopPage = () => {
             MR HD
           </div>
         </DesktopButton>
-        <DesktopButton>
+        <DesktopButton
+          disableRipple
+          onDoubleClick={() => {
+            setDisplayMyProjectsWindow(true);
+          }}
+          isActive={displayMyProjectsWindow}
+        >
           <img
             src={folder}
             alt="folder icon"
@@ -66,7 +98,13 @@ const DesktopPage = () => {
             My projects
           </div>
         </DesktopButton>
-        <DesktopButton>
+        <DesktopButton
+          disableRipple
+          onDoubleClick={() => {
+            setDisplayAboutMeWindow(true);
+          }}
+          isActive={displayAboutMeWindow}
+        >
           <img
             src={folder}
             alt="about me"
@@ -86,7 +124,7 @@ const DesktopPage = () => {
             About me
           </div>
         </DesktopButton>
-        <DesktopButton sx={{ paddingRight: "8px" }}>
+        <DesktopButton sx={{ paddingRight: "8px" }} disableRipple>
           <img
             src={trash}
             alt="trash icon"

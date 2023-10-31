@@ -1,40 +1,19 @@
 import styled from "styled-components";
-import { Grid, Button } from "@mui/material";
+import { Grid, Button, Divider } from "@mui/material";
 import bckg from "../../assets/desktop/bckg.png";
 
-const StyledBackgroundGrid = styled(Grid)`
-  background-image: url(${bckg});
-  background-size: cover;
-  width: 100vw;
-  height: 100vh;
-  z-index: 10;
-  position: relative;
-`;
-
-const ImageDesktopGrid = styled(Grid)`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  width: 100vw;
-  position: absolute;
-  z-index: 1;
-`;
-
-const DesktopButtonContainer = styled(Grid)`
-  display: flex;
-  flex-direction: column !important;
-  justify-content: space-between;
-  align-items: flex-end;
-  z-index: 2;
-  height: 80vh;
-  padding-right: 48px;
-`;
-
-// nav buttons with props that you send
+// props that you send
 type ButtonProps = {
   isVisible: boolean;
 };
+type ActiveButtonProps = {
+  isActive: boolean;
+};
+type DisplayWindowGridProps = {
+  isVisible: boolean;
+};
+
+// navbar
 const NavButton = styled(Button)<ButtonProps>`
   color: ${(props) =>
     props.isVisible ? "white !important" : "black !important"};
@@ -55,8 +34,27 @@ const NavButton = styled(Button)<ButtonProps>`
   }
 `;
 
-const DesktopButton = styled(Button)`
-  background-color: white;
+// desktop
+const StyledBackgroundGrid = styled(Grid)`
+  background-image: url(${bckg});
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+  z-index: 10;
+  position: relative;
+`;
+const DesktopButtonContainer = styled(Grid)`
+  display: flex;
+  flex-direction: column !important;
+  justify-content: space-between;
+  align-items: flex-end;
+  z-index: 2;
+  height: 80vh;
+  padding-right: 48px;
+`;
+const DesktopButton = styled(Button)<ActiveButtonProps>`
+  background-color: ${(props) =>
+    props.isActive ? "white !important" : "transparent !important"};
   border-radius: 0 !important;
   z-index: 2;
   display: flex;
@@ -69,6 +67,54 @@ const DesktopButton = styled(Button)`
     background-color: white !important;
   }
 `;
+const ImageDesktopGrid = styled(Grid)`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  z-index: 1;
+`;
+
+// desktop window
+const WindowGrid = styled(Grid)<DisplayWindowGridProps>`
+  display: ${(props) =>
+    props.isVisible ? "grid !important" : "none !important"};
+  background-color: white;
+  width: 500px;
+  position: absolute;
+  top: 20%;
+  left: 30%;
+  z-index: 22;
+  border: 2px solid black;
+`;
+const WindowGridHeader = styled(Grid)`
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  height: 33px;
+`;
+const WindowGridCloseIcon = styled(Grid)`
+  background-color: white;
+  width: 17px;
+  height: 17px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  &:hover {
+    background-color: red !important;
+  }
+`;
+const WindowHeaderLines = styled(Divider)`
+  border-bottom-width: 2px !important;
+  background-color: black !important;
+  margin: 1px !important;
+`;
 
 export {
   DesktopButtonContainer,
@@ -76,4 +122,8 @@ export {
   ImageDesktopGrid,
   NavButton,
   DesktopButton,
+  WindowHeaderLines,
+  WindowGrid,
+  WindowGridHeader,
+  WindowGridCloseIcon,
 };

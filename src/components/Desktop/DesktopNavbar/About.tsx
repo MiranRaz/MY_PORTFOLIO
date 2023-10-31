@@ -14,6 +14,7 @@ const About = () => {
             setIsVisible(!isVisible);
           }}
           isVisible={isVisible} // Pass the isVisible state as a prop
+          disableRipple
         >
           About
         </NavButton>

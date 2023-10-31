@@ -14,6 +14,7 @@ const Contact = () => {
             setIsVisible(!isVisible);
           }}
           isVisible={isVisible} // Pass the isVisible state as a prop
+          disableRipple
         >
           Contact
         </NavButton>
