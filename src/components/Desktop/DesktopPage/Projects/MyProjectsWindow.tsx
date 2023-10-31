@@ -75,7 +75,7 @@ const MyProjectsWindow: React.FC<MyProjectsProps> = ({
               backgroundColor: "black",
             }}
           />
-          <Grid sx={{ height: "auto", padding: "16px" }}>
+          <Grid sx={{ height: "300px", overflow: "scroll", padding: "16px" }}>
             <DesktopButton
               disableRipple
               onDoubleClick={() => {
