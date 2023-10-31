@@ -3,7 +3,6 @@ import Dialog from "@mui/material/Dialog";
 import { Dispatch, SetStateAction } from "react";
 import { Button, Grid } from "@mui/material";
 import { ProjectData } from "../../../../model/ProjectData.ts";
-import bomb from "../../../../assets/desktop/bomb.jpg";
 
 export interface AboutProjectProps {
   open: boolean;
@@ -15,11 +14,12 @@ const AboutProject: React.FC<AboutProjectProps> = ({ open, data, setOpen }) => {
   return (
     <Dialog
       open={open}
+      onClose={() => setOpen(false)} // Add this onClose prop
       sx={{
         "& .MuiDialog-container": {
           "& .MuiPaper-root": {
             width: "100%",
-            maxWidth: "500px", // Set your width here
+            maxWidth: "700px", // Set your width here
             border: "2px solid black",
           },
         },
@@ -31,10 +31,11 @@ const AboutProject: React.FC<AboutProjectProps> = ({ open, data, setOpen }) => {
           flexDirection: "row",
           alignItems: "center",
           paddingTop: "16px",
+          paddingRight: "16px",
         }}
       >
         <img
-          src={bomb}
+          src={data?.alertImage}
           alt=""
           style={{ width: "55px", paddingLeft: "16px", paddingTop: "16px" }}
         />
@@ -65,7 +66,7 @@ const AboutProject: React.FC<AboutProjectProps> = ({ open, data, setOpen }) => {
             setOpen(false);
           }}
           sx={{
-            border: "1px solid black",
+            border: "2px solid black",
             color: "black",
             borderRadius: "33px",
           }}

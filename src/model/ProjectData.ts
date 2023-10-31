@@ -3,5 +3,6 @@ export interface ProjectData {
   alt: string;
   title: string;
   description?: string;
-  url?: string; // Add a URL field for each project
+  url?: string;
+  alertImage: string;
 }
