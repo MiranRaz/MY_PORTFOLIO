@@ -82,7 +82,7 @@ const WindowGrid = styled(Grid)<DisplayWindowGridProps>`
   display: ${(props) =>
     props.isVisible ? "grid !important" : "none !important"};
   background-color: white;
-  width: 500px;
+  width: 505px;
   position: absolute;
   top: 20%;
   left: 30%;

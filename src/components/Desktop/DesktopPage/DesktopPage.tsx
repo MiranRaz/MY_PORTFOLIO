@@ -10,10 +10,10 @@ import logo_dark from "../../../assets/global/logo_dark.png";
 import folder from "../../../assets/desktop/folder.png";
 import MCHD from "../../../assets/desktop/MCHD.png";
 import trash from "../../../assets/desktop/trash.png";
-import MrhdWindow from "./MRHDWindow.tsx";
+import MrhdWindow from "./MRHD/MRHDWindow.tsx";
 import { useState } from "react";
-import MyProjectsWindow from "./MyProjectsWindow.tsx";
-import AboutWindow from "./AboutWindow.tsx"; // Import the Draggable component
+import MyProjectsWindow from "./Projects/MyProjectsWindow.tsx";
+import AboutWindow from "./About/AboutWindow.tsx"; // Import the Draggable component
 
 const DesktopPage = () => {
   const [displayMRWindow, setDisplayMRWindow] = useState(false);
@@ -26,6 +26,10 @@ const DesktopPage = () => {
       <MrhdWindow
         displayMRWindow={displayMRWindow}
         setDisplayMRWindow={setDisplayMRWindow}
+        displayMyProjectsWindow={displayMyProjectsWindow}
+        setDisplayMyProjectsWindow={setDisplayMyProjectsWindow}
+        displayAboutMeWindow={displayAboutMeWindow}
+        setDisplayAboutMeWindow={setDisplayAboutMeWindow}
       />
       <MyProjectsWindow
         displayMyProjectsWindow={displayMyProjectsWindow}

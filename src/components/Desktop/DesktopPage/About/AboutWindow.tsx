@@ -4,26 +4,26 @@ import {
   WindowGridCloseIcon,
   WindowGridHeader,
   WindowHeaderLines,
-} from "../style.ts";
+} from "../../style.ts";
 import Draggable from "react-draggable";
 import CloseIcon from "@mui/icons-material/Close";
 import { Dispatch, SetStateAction } from "react";
 import * as React from "react";
 
-interface MRHDProps {
-  displayMRWindow: boolean;
-  setDisplayMRWindow: Dispatch<SetStateAction<boolean>>;
+interface AboutProps {
+  displayAboutMeWindow: boolean;
+  setDisplayAboutMeWindow: Dispatch<SetStateAction<boolean>>;
 }
-const MrhdWindow: React.FC<MRHDProps> = ({
-  displayMRWindow,
-  setDisplayMRWindow,
+const AboutWindow: React.FC<AboutProps> = ({
+  displayAboutMeWindow,
+  setDisplayAboutMeWindow,
 }) => {
   return (
     <>
       <Draggable>
         <WindowGrid
-          isVisible={displayMRWindow}
-          sx={{ top: "12%", left: "53%" }}
+          isVisible={displayAboutMeWindow}
+          sx={{ top: "19%", left: "19%" }}
         >
           <WindowGridHeader>
             <Grid sx={{ width: "13px" }}>
@@ -36,12 +36,12 @@ const MrhdWindow: React.FC<MRHDProps> = ({
             </Grid>
             <WindowGridCloseIcon
               onClick={() => {
-                setDisplayMRWindow(false);
+                setDisplayAboutMeWindow(false);
               }}
             >
               <CloseIcon sx={{ color: "white", fontSize: "13px" }} />
             </WindowGridCloseIcon>
-            <Grid sx={{ width: "190px" }}>
+            <Grid sx={{ width: "172px" }}>
               <WindowHeaderLines />
               <WindowHeaderLines />
               <WindowHeaderLines />
@@ -49,8 +49,8 @@ const MrhdWindow: React.FC<MRHDProps> = ({
               <WindowHeaderLines />
               <WindowHeaderLines />
             </Grid>
-            <Grid>MR HD</Grid>
-            <Grid sx={{ width: "222px" }}>
+            <Grid>About me</Grid>
+            <Grid sx={{ width: "211px" }}>
               <WindowHeaderLines />
               <WindowHeaderLines />
               <WindowHeaderLines />
@@ -72,4 +72,4 @@ const MrhdWindow: React.FC<MRHDProps> = ({
   );
 };
 
-export default MrhdWindow;
+export default AboutWindow;
