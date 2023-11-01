@@ -2,19 +2,51 @@ import { useState } from "react";
 import { Box, Divider } from "@mui/material";
 import { NavButton } from "../style.ts";
 import { ClickAwayListener } from "@mui/base/ClickAwayListener";
+import projects from "../../../data/projectData.ts";
+import { ProjectData } from "../../../model/ProjectData.ts";
+import AboutProject from "../DesktopPage/Projects/AboutProject.tsx";
 
 const Projects = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const [openModal, setOpenModal] = useState(false);
+  const [projectData, setProjectData] = useState<ProjectData>();
+
+  const handleProjectClick = (project: ProjectData) => {
+    setOpenModal(true);
+    setProjectData(project);
+  };
+
+  const renderProjectType = (type: string) => {
+    return projects
+      .filter((project) => project?.type === type)
+      .map((project, index) => (
+        <NavButton
+          key={index}
+          sx={{ zIndex: "2", width: "100%" }}
+          onClick={() => {
+            setIsVisible(false);
+            handleProjectClick(project);
+          }}
+        >
+          {project?.title}
+        </NavButton>
+      ));
+  };
 
   return (
     <ClickAwayListener onClickAway={() => setIsVisible(false)}>
       <Box>
+        <AboutProject
+          open={openModal}
+          data={projectData}
+          setOpen={setOpenModal}
+        />
         <NavButton
+          disableRipple
           onClick={() => {
             setIsVisible(!isVisible);
           }}
           isVisible={isVisible} // Pass the isVisible state as a prop
-          disableRipple
         >
           Projects
         </NavButton>
@@ -32,124 +64,24 @@ const Projects = () => {
             zIndex: "10",
           }}
         >
+          {/*  Deployed projects */}
           <Divider sx={{ fontSize: "12px", paddingTop: "8px" }}>
             Deployed
           </Divider>
-          <NavButton
-            sx={{ zIndex: "2", width: "100%" }}
-            onClick={() => {
-              setIsVisible(false);
-            }}
-          >
-            Judo club Sarajevo
-          </NavButton>
-          <NavButton
-            sx={{ zIndex: "2", width: "100%" }}
-            onClick={() => {
-              setIsVisible(false);
-            }}
-          >
-            "Nas Film" Production
-          </NavButton>
-          <NavButton
-            sx={{ zIndex: "2", width: "100%" }}
-            onClick={() => {
-              setIsVisible(false);
-            }}
-          >
-            Macbeth band
-          </NavButton>
-          <NavButton
-            sx={{ zIndex: "2", width: "100%" }}
-            onClick={() => {
-              setIsVisible(false);
-            }}
-          >
-            Travel App
-          </NavButton>
-          <NavButton
-            sx={{ zIndex: "2", width: "100%" }}
-            onClick={() => {
-              setIsVisible(false);
-            }}
-          >
-            The Base
-          </NavButton>
-          <Divider sx={{ fontSize: "12px" }}>Private</Divider>
-          <NavButton
-            sx={{ zIndex: "2", width: "100%" }}
-            onClick={() => {
-              setIsVisible(false);
-            }}
-          >
-            BMW
-          </NavButton>
-          <NavButton
-            sx={{ zIndex: "2", width: "100%" }}
-            onClick={() => {
-              setIsVisible(false);
-            }}
-          >
-            bloola Factory
-          </NavButton>
-          <NavButton
-            sx={{ zIndex: "2", width: "100%" }}
-            onClick={() => {
-              setIsVisible(false);
-            }}
-          >
-            The Deutsche Bundesbank
-          </NavButton>
-          <Divider sx={{ fontSize: "12px" }}>NPM projects</Divider>
-          <NavButton
-            sx={{ zIndex: "2", width: "100%" }}
-            onClick={() => {
-              setIsVisible(false);
-            }}
-          >
-            Theme switch
-          </NavButton>
-          <NavButton
-            sx={{ zIndex: "2", width: "100%" }}
-            onClick={() => {
-              setIsVisible(false);
-            }}
-          >
-            Language switch
-          </NavButton>
-          <NavButton
-            sx={{ zIndex: "2", width: "100%" }}
-            onClick={() => {
-              setIsVisible(false);
-            }}
-          >
-            Scrollable section
-          </NavButton>
-          <NavButton
-            sx={{ zIndex: "2", width: "100%" }}
-            onClick={() => {
-              setIsVisible(false);
-            }}
-          >
-            Custom scrollbar
-          </NavButton>
-          <NavButton
-            sx={{ zIndex: "2", width: "100%" }}
-            onClick={() => {
-              setIsVisible(false);
-            }}
-          >
-            Image reveal
-          </NavButton>
-          <Divider sx={{ fontSize: "12px" }}>Games</Divider>
-          <NavButton
-            sx={{ zIndex: "2", width: "100%" }}
-            onClick={() => {
-              setIsVisible(false);
-            }}
-          >
-            Tic-Tac-Toe
-          </NavButton>
+          {renderProjectType("Deployed")}
+          {/*  Private projects */}
+          <Divider sx={{ fontSize: "12px", paddingTop: "8px" }}>
+            Private
+          </Divider>
+          {renderProjectType("Private")}
+          {/*  NPM projects */}
+          <Divider sx={{ fontSize: "12px", paddingTop: "8px" }}>
+            NPM projects
+          </Divider>
+          {renderProjectType("NPM projects")}
+          {/*  Games */}
+          <Divider sx={{ fontSize: "12px", paddingTop: "8px" }}>Games</Divider>
+          {renderProjectType("Games")}
         </Box>
       </Box>
     </ClickAwayListener>

@@ -5,4 +5,5 @@ export interface ProjectData {
   description?: string;
   url?: string;
   alertImage: string;
+  type: string;
 }

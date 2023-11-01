@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Grid, Button, Divider } from "@mui/material";
+import { Grid, Button, Divider, keyframes } from "@mui/material";
 import bckg from "../../assets/desktop/bckg.png";
 
 // props that you send
@@ -12,6 +12,32 @@ type ActiveButtonProps = {
 type DisplayWindowGridProps = {
   isVisible: boolean;
 };
+type LoaderProps = {
+  isLoading: boolean;
+};
+
+// loader
+const fadeOut = keyframes`
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+`;
+const LoaderGrid = styled(Grid)<LoaderProps>`
+  background-image: url(${bckg});
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  opacity: ${({ isLoading }) => (isLoading ? 1 : 0)};
+  transition: opacity 1s;
+  animation: ${({ isLoading }) => (isLoading ? "none" : `${fadeOut} 1s`)};
+`;
 
 // navbar
 const NavButton = styled(Button)<ButtonProps>`
@@ -117,6 +143,7 @@ const WindowHeaderLines = styled(Divider)`
 `;
 
 export {
+  LoaderGrid,
   DesktopButtonContainer,
   StyledBackgroundGrid,
   ImageDesktopGrid,

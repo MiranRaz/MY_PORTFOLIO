@@ -70,6 +70,7 @@ const AboutProject: React.FC<AboutProjectProps> = ({ open, data, setOpen }) => {
             color: "black",
             borderRadius: "33px",
           }}
+          disabled={data?.type === "Private"}
         >
           Proceed
         </Button>
