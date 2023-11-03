@@ -39,7 +39,7 @@ const MobilePage = () => {
     >
       <Grid
         sx={{
-          height: "5vh",
+          height: "5%",
           width: "100vw",
           backgroundColor: "black",
           display: "flex",
@@ -64,7 +64,7 @@ const MobilePage = () => {
       </Grid>
       <Grid
         sx={{
-          height: "82vh",
+          height: "82%",
           backgroundColor: "black",
         }}
       >
@@ -72,7 +72,7 @@ const MobilePage = () => {
       </Grid>
       <Grid
         sx={{
-          height: "13vh",
+          height: "13%",
           backgroundImage: `url(${bckgMobile})`,
           backgroundColor: "black",
           backgroundSize: "113%", // Zoom in more
