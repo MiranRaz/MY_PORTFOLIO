@@ -72,7 +72,7 @@ const MobilePage = () => {
           backgroundColor: "black",
         }}
       >
-        asd1
+        hello world
       </Grid>
       <Grid
         sx={{
