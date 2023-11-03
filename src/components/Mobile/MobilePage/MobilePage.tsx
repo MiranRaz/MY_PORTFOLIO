@@ -3,8 +3,11 @@ import bckgMobile from "../../../assets/mobile/bckgMobile.png";
 import logo_light from "../../../assets/global/logo_light.png";
 import { useEffect, useState } from "react";
 import Battery6BarIcon from "@mui/icons-material/Battery6Bar";
+import MobileDialog from "../MobileDialog.tsx";
 
 const MobilePage = () => {
+  const [openInitialModal, setOpenInitialModal] = useState<boolean>(true);
+
   const [currentTime, setCurrentTime] = useState("");
   useEffect(() => {
     // Function to update the current time with AM/PM
@@ -37,6 +40,7 @@ const MobilePage = () => {
         color: "white",
       }}
     >
+      <MobileDialog open={openInitialModal} setOpen={setOpenInitialModal} />
       <Grid
         sx={{
           height: "5%",
