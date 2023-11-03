@@ -122,6 +122,22 @@ const Skills = () => {
           >
             Photoshop
           </NavButton>
+          <NavButton
+            sx={{ zIndex: "2", width: "100%" }}
+            onClick={() => {
+              setIsVisible(false);
+            }}
+          >
+            DaVinci Resolve
+          </NavButton>
+          <NavButton
+            sx={{ zIndex: "2", width: "100%" }}
+            onClick={() => {
+              setIsVisible(false);
+            }}
+          >
+            Logic Pro X
+          </NavButton>
         </Box>
       </Box>
     </ClickAwayListener>

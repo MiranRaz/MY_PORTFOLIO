@@ -36,6 +36,10 @@ const Contact = () => {
             sx={{ zIndex: "2", width: "100%" }}
             onClick={() => {
               setIsVisible(false);
+              window.open(
+                "https://www.linkedin.com/in/miran-raznatovic/",
+                "_blank",
+              );
             }}
           >
             LinkedIn
@@ -44,6 +48,7 @@ const Contact = () => {
             sx={{ zIndex: "2", width: "100%" }}
             onClick={() => {
               setIsVisible(false);
+              window.location.href = `mailto:miranraznatovic@gmail.com`;
             }}
           >
             E-mail
@@ -52,6 +57,7 @@ const Contact = () => {
             sx={{ zIndex: "2", width: "100%" }}
             onClick={() => {
               setIsVisible(false);
+              window.open("https://github.com/MiranRaz", "_blank");
             }}
           >
             Github

@@ -22,9 +22,10 @@ const DesktopPage = () => {
 
   // Simulate a delay to demonstrate loading
   useEffect(() => {
+    // Simulate a delay to demonstrate loading
     setTimeout(() => {
       setIsLoading(false); // Set loading to false after the delay
-    }, 2000); // Adjust the delay time as needed
+    }, 3000); // Adjust the delay time as needed
   }, []);
 
   const [displayMRWindow, setDisplayMRWindow] = useState(false);

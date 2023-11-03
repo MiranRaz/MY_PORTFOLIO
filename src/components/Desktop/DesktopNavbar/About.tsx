@@ -36,6 +36,7 @@ const About = () => {
             sx={{ zIndex: "2", width: "100%" }}
             onClick={() => {
               setIsVisible(false);
+              window.open("https://www.fit.ba/", "_blank");
             }}
           >
             Education
