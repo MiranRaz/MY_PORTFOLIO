@@ -1,25 +1,25 @@
-import { Grid } from "@mui/material";
-import bckgMobile from "../../../assets/mobile/bckgMobile.png";
-import logo_light from "../../../assets/global/logo_light.png";
-import { useEffect, useState } from "react";
-import Battery6BarIcon from "@mui/icons-material/Battery6Bar";
-import MobileDialog from "../MobileDialog.tsx";
+import { Grid } from '@mui/material';
+import bckgMobile from '../../../assets/mobile/bckgMobile.png';
+import logo_light from '../../../assets/global/logo_light.png';
+import { useEffect, useState } from 'react';
+import Battery6BarIcon from '@mui/icons-material/Battery6Bar';
+import MobileDialog from '../MobileDialog.tsx';
 
 const MobilePage = () => {
   const [openInitialModal, setOpenInitialModal] = useState<boolean>(true);
 
-  const [currentTime, setCurrentTime] = useState("");
+  const [currentTime, setCurrentTime] = useState('');
   useEffect(() => {
     // Function to update the current time with AM/PM
     const updateTime = () => {
       const now = new Date();
       const hours = now.getHours();
       const minutes = now.getMinutes();
-      const amPm = hours >= 12 ? "PM" : "AM";
+      const amPm = hours >= 12 ? 'PM' : 'AM';
       const hours12 = hours % 12 || 12;
       const formattedTime = `${hours12}:${String(minutes).padStart(
         2,
-        "0",
+        '0'
       )} ${amPm}`;
       setCurrentTime(formattedTime);
     };
@@ -37,51 +37,51 @@ const MobilePage = () => {
     <Grid
       sx={{
         height: window?.innerHeight,
-        color: "white",
+        color: 'white',
       }}
     >
       <MobileDialog open={openInitialModal} setOpen={setOpenInitialModal} />
       <Grid
         sx={{
-          height: "5%",
-          width: "100vw",
-          backgroundColor: "black",
-          display: "flex",
-          flexDirection: "row",
-          alignItems: "center",
-          justifyContent: "space-between",
+          height: '5%',
+          width: '100vw',
+          backgroundColor: 'black',
+          display: 'flex',
+          flexDirection: 'row',
+          alignItems: 'center',
+          justifyContent: 'space-between',
         }}
       >
         <Grid>
           <img
             src={logo_light}
-            alt={"logo"}
-            style={{ height: "22px", paddingLeft: "24px" }}
+            alt={'logo'}
+            style={{ height: '22px', paddingLeft: '24px' }}
           />
         </Grid>
         <Grid>{currentTime}</Grid>
-        <Grid style={{ height: "25px", paddingRight: "24px" }}>
+        <Grid style={{ height: '25px', paddingRight: '24px' }}>
           <Battery6BarIcon
-            sx={{ transform: "rotate(90deg)", fontSize: "25px" }}
+            sx={{ transform: 'rotate(90deg)', fontSize: '25px' }}
           />
         </Grid>
       </Grid>
       <Grid
         sx={{
-          height: "82%",
-          backgroundColor: "black",
+          height: '82%',
+          backgroundColor: 'black',
         }}
       >
         hello world
       </Grid>
       <Grid
         sx={{
-          height: "13%",
+          height: '13%',
           backgroundImage: `url(${bckgMobile})`,
-          backgroundColor: "black",
-          backgroundSize: "113%", // Zoom in more
-          backgroundRepeat: "no-repeat",
-          backgroundPosition: "center bottom", // Zoom from the bottom
+          backgroundColor: 'black',
+          backgroundSize: '113%', // Zoom in more
+          backgroundRepeat: 'no-repeat',
+          backgroundPosition: 'center bottom', // Zoom from the bottom
         }}
       ></Grid>
     </Grid>
