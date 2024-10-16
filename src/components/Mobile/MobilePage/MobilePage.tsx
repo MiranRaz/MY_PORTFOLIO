@@ -40,7 +40,7 @@ const MobilePage = () => {
   return (
     <Grid
       sx={{
-        height: '100vh',
+        height: window?.innerHeight,
         color: 'white',
         display: 'flex',
         flexDirection: 'column',
