@@ -30,8 +30,8 @@ export const MobilePageFooter = () => {
               src={call}
               alt="asd" 
               style={{  
-                width: '64px',
-                height: '64px',
+                width: '54px',
+                height: '54px',
                 padding: '8px 0px',
               }}
             />
@@ -41,8 +41,8 @@ export const MobilePageFooter = () => {
               src={mail}
               alt="asd"
               style={{
-                width: '64px',
-                height: '64px',
+                width: '54px',
+                height: '54px',
                 padding: '8px 0px',
               }}
             />
@@ -52,8 +52,8 @@ export const MobilePageFooter = () => {
               src={contacts}
               alt="asd"
               style={{
-                width: '64px',
-                height: '64px',
+                width: '54px',
+                height: '54px',
                 padding: '8px 0px',
               }}
             />
@@ -63,8 +63,8 @@ export const MobilePageFooter = () => {
               src={settings}
               alt="asd"
               style={{
-                width: '64px',
-                height: '64px',
+                width: '54px',
+                height: '54px',
                 padding: '8px 0px',
               }}
             />
