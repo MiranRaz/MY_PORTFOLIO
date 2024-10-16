@@ -104,7 +104,7 @@ const MobilePage = () => {
               style={{
                 width: '49px',
                 height: '49px',
-                padding: '12px 0px',
+                padding: '8px 0px',
               }}
             />
           </Button>
@@ -115,7 +115,7 @@ const MobilePage = () => {
               style={{
                 width: '49px',
                 height: '49px',
-                padding: '12px 0px',
+                padding: '8px 0px',
               }}
             />
           </Button>
@@ -126,7 +126,7 @@ const MobilePage = () => {
               style={{
                 width: '49px',
                 height: '49px',
-                padding: '12px 0px',
+                padding: '8px 0px',
               }}
             />
           </Button>
@@ -137,7 +137,7 @@ const MobilePage = () => {
               style={{
                 width: '49px',
                 height: '49px',
-                padding: '12px 0px',
+                padding: '8px 0px',
               }}
             />
           </Button>
@@ -153,28 +153,28 @@ const MobilePage = () => {
       >
         <Grid
           sx={{
-            padding: '8px 0px',
+            padding: '4px 0px',
           }}
         >
           <div>Phone</div>
         </Grid>
         <Grid
           sx={{
-            padding: '8px 0px',
+            padding: '4px 0px',
           }}
         >
           <div>Mail</div>
         </Grid>
         <Grid
           sx={{
-            padding: '8px 0px',
+            padding: '4px 0px',
           }}
         >
           <div>Contact</div>
         </Grid>
         <Grid
           sx={{
-            padding: '8px 0px',
+            padding: '4px 0px',
           }}
         >
           <div>Settings</div>
