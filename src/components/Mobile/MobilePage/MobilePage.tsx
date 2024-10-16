@@ -1,6 +1,4 @@
 import { Button, Grid } from '@mui/material';
-import bckgMobile from '../../../assets/mobile/bckgMobile.png';
-import bckMobileBelow from '../../../assets/mobile/bckMobileBelow.png';
 import logo_light from '../../../assets/global/logo_light.png';
 import { useEffect, useState } from 'react';
 import Battery6BarIcon from '@mui/icons-material/Battery6Bar';
@@ -9,6 +7,7 @@ import call from '../../../assets/mobile/call.png';
 import contacts from '../../../assets/mobile/contacts.png';
 import mail from '../../../assets/mobile/mail.png';
 import settings from '../../../assets/mobile/settings.png';
+import { MobilePageFooter } from './MobilePageFooter/MobilePageFooter.tsx';
 const MobilePage = () => {
   const [openInitialModal, setOpenInitialModal] = useState<boolean>(true);
 
@@ -77,109 +76,314 @@ const MobilePage = () => {
         sx={{
           height: '100%',
           backgroundColor: 'black',
+          display: 'flex',
+          flexDirection: 'column',
+          gap: '24px',
+          justifyContent: 'space-between',
+          padding: '24px 0px',
         }}
       >
-        hello world
+        <div>
+          <Grid
+            sx={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(4, 1fr)',
+              justifyItems: 'center',
+            }}
+          >
+            <Button disableRipple>
+              <img
+                src={call}
+                alt="asd"
+                style={{
+                  width: '64px',
+                  height: '64px',
+                  padding: '8px 0px',
+                }}
+              />
+            </Button>
+            <Button disableRipple>
+              <img
+                src={mail}
+                alt="asd"
+                style={{
+                  width: '64px',
+                  height: '64px',
+                  padding: '8px 0px',
+                }}
+              />
+            </Button>
+            <Button disableRipple>
+              <img
+                src={contacts}
+                alt="asd"
+                style={{
+                  width: '64px',
+                  height: '64px',
+                  padding: '8px 0px',
+                }}
+              />
+            </Button>
+            <Button disableRipple>
+              <img
+                src={settings}
+                alt="asd"
+                style={{
+                  width: '64px',
+                  height: '64px',
+                  padding: '8px 0px',
+                }}
+              />
+            </Button>
+          </Grid>
+          <Grid
+            sx={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(4, 1fr)',
+              justifyItems: 'center',
+            }}
+          >
+            <Grid>
+              <div>Phone</div>
+            </Grid>
+            <Grid>
+              <div>Mail</div>
+            </Grid>
+            <Grid>
+              <div>Contact</div>
+            </Grid>
+            <Grid>
+              <div>Settings</div>
+            </Grid>
+          </Grid>
+        </div>
+
+        <div>
+          <Grid
+            sx={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(4, 1fr)',
+              justifyItems: 'center',
+            }}
+          >
+            <Button disableRipple>
+              <img
+                src={call}
+                alt="asd"
+                style={{
+                  width: '64px',
+                  height: '64px',
+                  padding: '8px 0px',
+                }}
+              />
+            </Button>
+            <Button disableRipple>
+              <img
+                src={mail}
+                alt="asd"
+                style={{
+                  width: '64px',
+                  height: '64px',
+                  padding: '8px 0px',
+                }}
+              />
+            </Button>
+            <Button disableRipple>
+              <img
+                src={contacts}
+                alt="asd"
+                style={{
+                  width: '64px',
+                  height: '64px',
+                  padding: '8px 0px',
+                }}
+              />
+            </Button>
+            <Button disableRipple>
+              <img
+                src={settings}
+                alt="asd"
+                style={{
+                  width: '64px',
+                  height: '64px',
+                  padding: '8px 0px',
+                }}
+              />
+            </Button>
+          </Grid>
+          <Grid
+            sx={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(4, 1fr)',
+              justifyItems: 'center',
+            }}
+          >
+            <Grid>
+              <div>Phone</div>
+            </Grid>
+            <Grid>
+              <div>Mail</div>
+            </Grid>
+            <Grid>
+              <div>Contact</div>
+            </Grid>
+            <Grid>
+              <div>Settings</div>
+            </Grid>
+          </Grid>
+        </div>
+
+        <div>
+          <Grid
+            sx={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(4, 1fr)',
+              justifyItems: 'center',
+            }}
+          >
+            <Button disableRipple>
+              <img
+                src={call}
+                alt="asd"
+                style={{
+                  width: '64px',
+                  height: '64px',
+                  padding: '8px 0px',
+                }}
+              />
+            </Button>
+            <Button disableRipple>
+              <img
+                src={mail}
+                alt="asd"
+                style={{
+                  width: '64px',
+                  height: '64px',
+                  padding: '8px 0px',
+                }}
+              />
+            </Button>
+            <Button disableRipple>
+              <img
+                src={contacts}
+                alt="asd"
+                style={{
+                  width: '64px',
+                  height: '64px',
+                  padding: '8px 0px',
+                }}
+              />
+            </Button>
+            <Button disableRipple>
+              <img
+                src={settings}
+                alt="asd"
+                style={{
+                  width: '64px',
+                  height: '64px',
+                  padding: '8px 0px',
+                }}
+              />
+            </Button>
+          </Grid>
+          <Grid
+            sx={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(4, 1fr)',
+              justifyItems: 'center',
+            }}
+          >
+            <Grid>
+              <div>Phone</div>
+            </Grid>
+            <Grid>
+              <div>Mail</div>
+            </Grid>
+            <Grid>
+              <div>Contact</div>
+            </Grid>
+            <Grid>
+              <div>Settings</div>
+            </Grid>
+          </Grid>
+        </div>
+
+        <div>
+          <Grid
+            sx={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(4, 1fr)',
+              justifyItems: 'center',
+            }}
+          >
+            <Button disableRipple>
+              <img
+                src={call}
+                alt="asd"
+                style={{
+                  width: '64px',
+                  height: '64px',
+                  padding: '8px 0px',
+                }}
+              />
+            </Button>
+            <Button disableRipple>
+              <img
+                src={mail}
+                alt="asd"
+                style={{
+                  width: '64px',
+                  height: '64px',
+                  padding: '8px 0px',
+                }}
+              />
+            </Button>
+            <Button disableRipple>
+              <img
+                src={contacts}
+                alt="asd"
+                style={{
+                  width: '64px',
+                  height: '64px',
+                  padding: '8px 0px',
+                }}
+              />
+            </Button>
+            <Button disableRipple>
+              <img
+                src={settings}
+                alt="asd"
+                style={{
+                  width: '64px',
+                  height: '64px',
+                  padding: '8px 0px',
+                }}
+              />
+            </Button>
+          </Grid>
+          <Grid
+            sx={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(4, 1fr)',
+              justifyItems: 'center',
+            }}
+          >
+            <Grid>
+              <div>Phone</div>
+            </Grid>
+            <Grid>
+              <div>Mail</div>
+            </Grid>
+            <Grid>
+              <div>Contact</div>
+            </Grid>
+            <Grid>
+              <div>Settings</div>
+            </Grid>
+          </Grid>
+        </div>
       </Grid>
-      <Grid
-        sx={{
-          backgroundImage: `url(${bckgMobile})`,
-          backgroundColor: 'black',
-          backgroundSize: '113%',
-          backgroundRepeat: 'no-repeat',
-          backgroundPosition: 'center bottom',
-        }}
-      >
-        <Grid
-          sx={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(4, 1fr)',
-            justifyItems: 'center',
-          }}
-        >
-          <Button disableRipple>
-            <img
-              src={call}
-              alt="asd"
-              style={{
-                width: '49px',
-                height: '49px',
-                padding: '8px 0px',
-              }}
-            />
-          </Button>
-          <Button disableRipple>
-            <img
-              src={mail}
-              alt="asd"
-              style={{
-                width: '49px',
-                height: '49px',
-                padding: '8px 0px',
-              }}
-            />
-          </Button>
-          <Button disableRipple>
-            <img
-              src={contacts}
-              alt="asd"
-              style={{
-                width: '49px',
-                height: '49px',
-                padding: '8px 0px',
-              }}
-            />
-          </Button>
-          <Button disableRipple>
-            <img
-              src={settings}
-              alt="asd"
-              style={{
-                width: '49px',
-                height: '49px',
-                padding: '8px 0px',
-              }}
-            />
-          </Button>
-        </Grid>
-      </Grid>
-      <Grid
-        sx={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(4, 1fr)',
-          justifyItems: 'center',
-          backgroundImage: `url(${bckMobileBelow})`,
-        }}
-      >
-        <Grid
-          sx={{
-            padding: '4px 0px',
-          }}
-        >
-          <div>Phone</div>
-        </Grid>
-        <Grid
-          sx={{
-            padding: '4px 0px',
-          }}
-        >
-          <div>Mail</div>
-        </Grid>
-        <Grid
-          sx={{
-            padding: '4px 0px',
-          }}
-        >
-          <div>Contact</div>
-        </Grid>
-        <Grid
-          sx={{
-            padding: '4px 0px',
-          }}
-        >
-          <div>Settings</div>
-        </Grid>
-      </Grid>
+      <MobilePageFooter />
     </Grid>
   );
 };

@@ -41,9 +41,7 @@ const MobileDialog: React.FC<MobileDialogProps> = ({ open, setOpen }) => {
         },
       }}
     >
-      <DialogTitle sx={{ fontSize: '20px' }}>
-        Best experience notice
-      </DialogTitle>
+      <DialogTitle sx={{ fontSize: '20px' }}>Desktop site!</DialogTitle>
       <DialogContent>
         <DialogContentText
           sx={{
@@ -52,7 +50,7 @@ const MobileDialog: React.FC<MobileDialogProps> = ({ open, setOpen }) => {
           }}
         >
           For the best experience please check out the portfolio website on the
-          desktop!
+          desktop site!
         </DialogContentText>
       </DialogContent>
       {showCloseButton && (
