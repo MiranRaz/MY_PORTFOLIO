@@ -42,7 +42,7 @@ const MobileDialog: React.FC<MobileDialogProps> = ({ open, setOpen }) => {
       }}
     >
       <DialogTitle sx={{ fontSize: '20px' }}>
-        This site is unavailable
+        Best experience notice
       </DialogTitle>
       <DialogContent>
         <DialogContentText
@@ -51,8 +51,8 @@ const MobileDialog: React.FC<MobileDialogProps> = ({ open, setOpen }) => {
             color: 'white',
           }}
         >
-          The mobile portfolio is currently being made. Please check out the
-          portfolio website on the desktop site!
+          For the best experience please check out the portfolio website on the
+          desktop!
         </DialogContentText>
       </DialogContent>
       {showCloseButton && (

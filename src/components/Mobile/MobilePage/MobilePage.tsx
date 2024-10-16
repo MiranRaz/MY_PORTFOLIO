@@ -1,10 +1,14 @@
 import { Grid } from '@mui/material';
 import bckgMobile from '../../../assets/mobile/bckgMobile.png';
+import bckMobileBelow from '../../../assets/mobile/bckMobileBelow.png';
 import logo_light from '../../../assets/global/logo_light.png';
 import { useEffect, useState } from 'react';
 import Battery6BarIcon from '@mui/icons-material/Battery6Bar';
 import MobileDialog from '../MobileDialog.tsx';
-
+import call from '../../../assets/mobile/call.png';
+import contacts from '../../../assets/mobile/contacts.png';
+import mail from '../../../assets/mobile/mail.png';
+import settings from '../../../assets/mobile/settings.png';
 const MobilePage = () => {
   const [openInitialModal, setOpenInitialModal] = useState<boolean>(true);
 
@@ -36,8 +40,11 @@ const MobilePage = () => {
   return (
     <Grid
       sx={{
-        height: window?.innerHeight,
+        height: '100vh',
         color: 'white',
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'space-between',
       }}
     >
       <MobileDialog open={openInitialModal} setOpen={setOpenInitialModal} />
@@ -68,7 +75,7 @@ const MobilePage = () => {
       </Grid>
       <Grid
         sx={{
-          height: '82%',
+          height: '100%',
           backgroundColor: 'black',
         }}
       >
@@ -76,14 +83,104 @@ const MobilePage = () => {
       </Grid>
       <Grid
         sx={{
-          height: '13%',
           backgroundImage: `url(${bckgMobile})`,
           backgroundColor: 'black',
-          backgroundSize: '113%', // Zoom in more
+          backgroundSize: '113%',
           backgroundRepeat: 'no-repeat',
-          backgroundPosition: 'center bottom', // Zoom from the bottom
+          backgroundPosition: 'center bottom',
         }}
-      ></Grid>
+      >
+        <Grid
+          sx={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(4, 1fr)',
+            justifyItems: 'center',
+          }}
+        >
+          <Grid>
+            <img
+              src={call}
+              alt="asd"
+              style={{
+                width: '49px',
+                height: '49px',
+                padding: '12px 0px',
+              }}
+            />
+          </Grid>
+          <Grid>
+            <img
+              src={mail}
+              alt="asd"
+              style={{
+                width: '49px',
+                height: '49px',
+                padding: '12px 0px',
+              }}
+            />
+          </Grid>
+          <Grid>
+            <img
+              src={contacts}
+              alt="asd"
+              style={{
+                width: '49px',
+                height: '49px',
+                padding: '12px 0px',
+              }}
+            />
+          </Grid>
+
+          <Grid>
+            <img
+              src={settings}
+              alt="asd"
+              style={{
+                width: '49px',
+                height: '49px',
+                padding: '12px 0px',
+              }}
+            />
+          </Grid>
+        </Grid>
+      </Grid>
+      <Grid
+        sx={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(4, 1fr)',
+          justifyItems: 'center',
+          backgroundImage: `url(${bckMobileBelow})`,
+        }}
+      >
+        <Grid
+          sx={{
+            padding: '8px 0px',
+          }}
+        >
+          <div>Phone</div>
+        </Grid>
+        <Grid
+          sx={{
+            padding: '8px 0px',
+          }}
+        >
+          <div>Mail</div>
+        </Grid>
+        <Grid
+          sx={{
+            padding: '8px 0px',
+          }}
+        >
+          <div>Contact</div>
+        </Grid>
+        <Grid
+          sx={{
+            padding: '8px 0px',
+          }}
+        >
+          <div>Settings</div>
+        </Grid>
+      </Grid>
     </Grid>
   );
 };
