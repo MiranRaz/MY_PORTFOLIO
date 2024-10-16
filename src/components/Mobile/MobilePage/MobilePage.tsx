@@ -1,4 +1,4 @@
-import { Grid } from '@mui/material';
+import { Button, Grid } from '@mui/material';
 import bckgMobile from '../../../assets/mobile/bckgMobile.png';
 import bckMobileBelow from '../../../assets/mobile/bckMobileBelow.png';
 import logo_light from '../../../assets/global/logo_light.png';
@@ -97,7 +97,7 @@ const MobilePage = () => {
             justifyItems: 'center',
           }}
         >
-          <Grid>
+          <Button disableRipple>
             <img
               src={call}
               alt="asd"
@@ -107,8 +107,8 @@ const MobilePage = () => {
                 padding: '12px 0px',
               }}
             />
-          </Grid>
-          <Grid>
+          </Button>
+          <Button disableRipple>
             <img
               src={mail}
               alt="asd"
@@ -118,8 +118,8 @@ const MobilePage = () => {
                 padding: '12px 0px',
               }}
             />
-          </Grid>
-          <Grid>
+          </Button>
+          <Button disableRipple>
             <img
               src={contacts}
               alt="asd"
@@ -129,9 +129,8 @@ const MobilePage = () => {
                 padding: '12px 0px',
               }}
             />
-          </Grid>
-
-          <Grid>
+          </Button>
+          <Button disableRipple>
             <img
               src={settings}
               alt="asd"
@@ -141,7 +140,7 @@ const MobilePage = () => {
                 padding: '12px 0px',
               }}
             />
-          </Grid>
+          </Button>
         </Grid>
       </Grid>
       <Grid
