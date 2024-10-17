@@ -5,9 +5,12 @@ import Battery6BarIcon from '@mui/icons-material/Battery6Bar';
 import MobileDialog from '../MobileDialog.tsx';
 import { MobilePageFooter } from './MobilePageFooter/MobilePageFooter.tsx';
 import projects from '../../../data/projectData.ts';
+import { InformationDialog } from './InformationDialog/InformationDialog.tsx';
 
 const MobilePage = () => {
   const [openInitialModal, setOpenInitialModal] = useState<boolean>(true);
+  const [openInfo, setOpenInfo] = useState<boolean>(false);
+  const [selectedProject, setSelectedProject] = useState<any>(null); // New state for selected project
 
   const [currentTime, setCurrentTime] = useState('');
   useEffect(() => {
@@ -100,6 +103,10 @@ const MobilePage = () => {
                   flexDirection: 'column',
                   alignItems: 'center',
                 }}
+                onClick={() => {
+                  setSelectedProject(project); // Set the selected project
+                  setOpenInfo(true);
+                }}
               >
                 <Button disableRipple>
                   <img
@@ -128,6 +135,11 @@ const MobilePage = () => {
         </div>
       </Grid>
       <MobilePageFooter />
+      <InformationDialog
+        openInfo={openInfo}
+        setOpenInfo={setOpenInfo}
+        project={selectedProject}
+      />
     </Grid>
   );
 };
