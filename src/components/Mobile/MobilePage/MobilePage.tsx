@@ -106,8 +106,8 @@ const MobilePage = () => {
                     src={project.image}
                     alt={project.title}
                     style={{
-                      width: '50px',
-                      height: '50px',
+                      width: '46px',
+                      height: '46px',
                       padding: '8px 0px',
                     }}
                   />
@@ -117,6 +117,7 @@ const MobilePage = () => {
                     textAlign: 'center',
                     color: 'black',
                     marginTop: '0px',
+                    fontSize: '13px',
                   }}
                 >
                   {project.title}

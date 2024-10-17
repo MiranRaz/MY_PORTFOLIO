@@ -30,8 +30,8 @@ export const MobilePageFooter = () => {
               src={call}
               alt="asd"
               style={{
-                width: '50px',
-                height: '50px',
+                width: '46px',
+                height: '46px',
                 padding: '8px 0px',
               }}
             />
@@ -41,8 +41,8 @@ export const MobilePageFooter = () => {
               src={mail}
               alt="asd"
               style={{
-                width: '50px',
-                height: '50px',
+                width: '46px',
+                height: '46px',
                 padding: '8px 0px',
               }}
             />
@@ -52,8 +52,8 @@ export const MobilePageFooter = () => {
               src={contacts}
               alt="asd"
               style={{
-                width: '50px',
-                height: '50px',
+                width: '46px',
+                height: '46px',
                 padding: '8px 0px',
               }}
             />
@@ -63,8 +63,8 @@ export const MobilePageFooter = () => {
               src={settings}
               alt="asd"
               style={{
-                width: '50px',
-                height: '50px',
+                width: '46px',
+                height: '46px',
                 padding: '8px 0px',
               }}
             />
@@ -84,28 +84,52 @@ export const MobilePageFooter = () => {
             padding: '4px 0px',
           }}
         >
-          <div>Contact</div>
+          <div
+            style={{
+              fontSize: '13px',
+            }}
+          >
+            Contact
+          </div>
         </Grid>
         <Grid
           sx={{
             padding: '4px 0px',
           }}
         >
-          <div>Mail</div>
+          <div
+            style={{
+              fontSize: '13px',
+            }}
+          >
+            Mail
+          </div>
         </Grid>
         <Grid
           sx={{
             padding: '4px 0px',
           }}
         >
-          <div>About</div>
+          <div
+            style={{
+              fontSize: '13px',
+            }}
+          >
+            About
+          </div>
         </Grid>
         <Grid
           sx={{
             padding: '4px 0px',
           }}
         >
-          <div>Knowledge</div>
+          <div
+            style={{
+              fontSize: '13px',
+            }}
+          >
+            Knowledge
+          </div>
         </Grid>
       </Grid>
     </>
