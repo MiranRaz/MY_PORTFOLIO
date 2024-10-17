@@ -59,11 +59,8 @@ const MobileDialog: React.FC<MobileDialogProps> = ({ open, setOpen }) => {
             onClick={() => setOpen(false)}
             sx={{
               color: 'white',
-              background: '#0081F8',
               border: '1px solid white',
-              marginTop: '16px',
-              borderRadius: '50px',
-              width: '50%',
+              width: '100%',
             }}
           >
             Close

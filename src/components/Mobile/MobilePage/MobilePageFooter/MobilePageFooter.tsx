@@ -28,8 +28,8 @@ export const MobilePageFooter = () => {
           <Button disableRipple>
             <img
               src={call}
-              alt="asd" 
-              style={{  
+              alt="asd"
+              style={{
                 width: '50px',
                 height: '50px',
                 padding: '8px 0px',
@@ -84,7 +84,7 @@ export const MobilePageFooter = () => {
             padding: '4px 0px',
           }}
         >
-          <div>Phone</div>
+          <div>Contact</div>
         </Grid>
         <Grid
           sx={{
@@ -98,14 +98,14 @@ export const MobilePageFooter = () => {
             padding: '4px 0px',
           }}
         >
-          <div>Contact</div>
+          <div>About</div>
         </Grid>
         <Grid
           sx={{
             padding: '4px 0px',
           }}
         >
-          <div>Settings</div>
+          <div>Knowledge</div>
         </Grid>
       </Grid>
     </>

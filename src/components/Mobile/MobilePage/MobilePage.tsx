@@ -1,19 +1,16 @@
 import { Button, Grid } from '@mui/material';
-import logo_light from '../../../assets/global/logo_light.png';
+import logo_dark from '../../../assets/global/logo_dark.png';
 import { useEffect, useState } from 'react';
 import Battery6BarIcon from '@mui/icons-material/Battery6Bar';
 import MobileDialog from '../MobileDialog.tsx';
-import call from '../../../assets/mobile/call.png';
-import contacts from '../../../assets/mobile/contacts.png';
-import mail from '../../../assets/mobile/mail.png';
-import settings from '../../../assets/mobile/settings.png';
 import { MobilePageFooter } from './MobilePageFooter/MobilePageFooter.tsx';
+import projects from '../../../data/projectData.ts';
+
 const MobilePage = () => {
   const [openInitialModal, setOpenInitialModal] = useState<boolean>(true);
 
   const [currentTime, setCurrentTime] = useState('');
   useEffect(() => {
-    // Function to update the current time with AM/PM
     const updateTime = () => {
       const now = new Date();
       const hours = now.getHours();
@@ -27,20 +24,18 @@ const MobilePage = () => {
       setCurrentTime(formattedTime);
     };
 
-    // Update the time immediately
     updateTime();
 
-    // Set up a timer to update the time every second (1000 milliseconds)
     const timer = setInterval(updateTime, 1000);
 
-    // Clean up the timer when the component unmounts
     return () => clearInterval(timer);
   }, []);
+
   return (
     <Grid
       sx={{
         height: window?.innerHeight,
-        color: 'white',
+        color: '#B9B7B8',
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'space-between',
@@ -51,7 +46,7 @@ const MobilePage = () => {
         sx={{
           height: '5%',
           width: '100vw',
-          backgroundColor: 'black',
+          backgroundColor: '#B9B7B8',
           display: 'flex',
           flexDirection: 'row',
           alignItems: 'center',
@@ -60,326 +55,74 @@ const MobilePage = () => {
       >
         <Grid>
           <img
-            src={logo_light}
+            src={logo_dark}
             alt={'logo'}
-            style={{ height: '22px', paddingLeft: '24px' }}
+            style={{
+              height: '22px',
+              paddingLeft: '24px',
+            }}
           />
         </Grid>
-        <Grid>{currentTime}</Grid>
+        <Grid sx={{ color: 'black' }}>{currentTime}</Grid>
         <Grid style={{ height: '25px', paddingRight: '24px' }}>
           <Battery6BarIcon
-            sx={{ transform: 'rotate(90deg)', fontSize: '25px' }}
+            sx={{
+              transform: 'rotate(90deg)',
+              fontSize: '25px',
+              color: 'black',
+            }}
           />
         </Grid>
       </Grid>
       <Grid
         sx={{
           height: '100%',
-          backgroundColor: 'black',
+          backgroundColor: '#B9B7B8',
           display: 'flex',
           flexDirection: 'column',
-          gap: '24px',
-          justifyContent: 'space-between',
-          padding: '24px 0px',
         }}
       >
-        <div>
+        <div style={{ display: 'flex', height: '100%', padding: '4px' }}>
           <Grid
             sx={{
               display: 'grid',
               gridTemplateColumns: 'repeat(4, 1fr)',
               justifyItems: 'center',
+              width: '100%',
+              alignItems: 'center',
             }}
           >
-            <Button disableRipple>
-              <img
-                src={call}
-                alt="asd"
-                style={{
-                  width: '50px',
-                  height: '50px',
-                  padding: '8px 0px',
+            {projects.map((project, index) => (
+              <Grid
+                key={index}
+                sx={{
+                  display: 'flex',
+                  flexDirection: 'column',
+                  alignItems: 'center',
                 }}
-              />
-            </Button>
-            <Button disableRipple>
-              <img
-                src={mail}
-                alt="asd"
-                style={{
-                  width: '50px',
-                  height: '50px',
-                  padding: '8px 0px',
-                }}
-              />
-            </Button>
-            <Button disableRipple>
-              <img
-                src={contacts}
-                alt="asd"
-                style={{
-                  width: '50px',
-                  height: '50px',
-                  padding: '8px 0px',
-                }}
-              />
-            </Button>
-            <Button disableRipple>
-              <img
-                src={settings}
-                alt="asd"
-                style={{
-                  width: '50px',
-                  height: '50px',
-                  padding: '8px 0px',
-                }}
-              />
-            </Button>
-          </Grid>
-          <Grid
-            sx={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(4, 1fr)',
-              justifyItems: 'center',
-            }}
-          >
-            <Grid>
-              <div>Phone</div>
-            </Grid>
-            <Grid>
-              <div>Mail</div>
-            </Grid>
-            <Grid>
-              <div>Contact</div>
-            </Grid>
-            <Grid>
-              <div>Settings</div>
-            </Grid>
-          </Grid>
-        </div>
-
-        <div>
-          <Grid
-            sx={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(4, 1fr)',
-              justifyItems: 'center',
-            }}
-          >
-            <Button disableRipple>
-              <img
-                src={call}
-                alt="asd"
-                style={{
-                  width: '50px',
-                  height: '50px',
-                  padding: '8px 0px',
-                }}
-              />
-            </Button>
-            <Button disableRipple>
-              <img
-                src={mail}
-                alt="asd"
-                style={{
-                  width: '50px',
-                  height: '50px',
-                  padding: '8px 0px',
-                }}
-              />
-            </Button>
-            <Button disableRipple>
-              <img
-                src={contacts}
-                alt="asd"
-                style={{
-                  width: '50px',
-                  height: '50px',
-                  padding: '8px 0px',
-                }}
-              />
-            </Button>
-            <Button disableRipple>
-              <img
-                src={settings}
-                alt="asd"
-                style={{
-                  width: '50px',
-                  height: '50px',
-                  padding: '8px 0px',
-                }}
-              />
-            </Button>
-          </Grid>
-          <Grid
-            sx={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(4, 1fr)',
-              justifyItems: 'center',
-            }}
-          >
-            <Grid>
-              <div>Phone</div>
-            </Grid>
-            <Grid>
-              <div>Mail</div>
-            </Grid>
-            <Grid>
-              <div>Contact</div>
-            </Grid>
-            <Grid>
-              <div>Settings</div>
-            </Grid>
-          </Grid>
-        </div>
-
-        <div>
-          <Grid
-            sx={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(4, 1fr)',
-              justifyItems: 'center',
-            }}
-          >
-            <Button disableRipple>
-              <img
-                src={call}
-                alt="asd"
-                style={{
-                  width: '50px',
-                  height: '50px',
-                  padding: '8px 0px',
-                }}
-              />
-            </Button>
-            <Button disableRipple>
-              <img
-                src={mail}
-                alt="asd"
-                style={{
-                  width: '50px',
-                  height: '50px',
-                  padding: '8px 0px',
-                }}
-              />
-            </Button>
-            <Button disableRipple>
-              <img
-                src={contacts}
-                alt="asd"
-                style={{
-                  width: '50px',
-                  height: '50px',
-                  padding: '8px 0px',
-                }}
-              />
-            </Button>
-            <Button disableRipple>
-              <img
-                src={settings}
-                alt="asd"
-                style={{
-                  width: '50px',
-                  height: '50px',
-                  padding: '8px 0px',
-                }}
-              />
-            </Button>
-          </Grid>
-          <Grid
-            sx={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(4, 1fr)',
-              justifyItems: 'center',
-            }}
-          >
-            <Grid>
-              <div>Phone</div>
-            </Grid>
-            <Grid>
-              <div>Mail</div>
-            </Grid>
-            <Grid>
-              <div>Contact</div>
-            </Grid>
-            <Grid>
-              <div>Settings</div>
-            </Grid>
-          </Grid>
-        </div>
-
-        <div>
-          <Grid
-            sx={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(4, 1fr)',
-              justifyItems: 'center',
-            }}
-          >
-            <Button disableRipple>
-              <img
-                src={call}
-                alt="asd"
-                style={{
-                  width: '50px',
-                  height: '50px',
-                  padding: '8px 0px',
-                }}
-              />
-            </Button>
-            <Button disableRipple>
-              <img
-                src={mail}
-                alt="asd"
-                style={{
-                  width: '50px',
-                  height: '50px',
-                  padding: '8px 0px',
-                }}
-              />
-            </Button>
-            <Button disableRipple>
-              <img
-                src={contacts}
-                alt="asd"
-                style={{
-                  width: '50px',
-                  height: '50px',
-                  padding: '8px 0px',
-                }}
-              />
-            </Button>
-            <Button disableRipple>
-              <img
-                src={settings}
-                alt="asd"
-                style={{
-                  width: '50px',
-                  height: '50px',
-                  padding: '8px 0px',
-                }}
-              />
-            </Button>
-          </Grid>
-          <Grid
-            sx={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(4, 1fr)',
-              justifyItems: 'center',
-            }}
-          >
-            <Grid>
-              <div>Phone</div>
-            </Grid>
-            <Grid>
-              <div>Mail</div>
-            </Grid>
-            <Grid>
-              <div>Contact</div>
-            </Grid>
-            <Grid>
-              <div>Settings</div>
-            </Grid>
+              >
+                <Button disableRipple>
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    style={{
+                      width: '50px',
+                      height: '50px',
+                      padding: '8px 0px',
+                    }}
+                  />
+                </Button>
+                <p
+                  style={{
+                    textAlign: 'center',
+                    color: 'black',
+                    marginTop: '0px',
+                  }}
+                >
+                  {project.title}
+                </p>
+              </Grid>
+            ))}
           </Grid>
         </div>
       </Grid>
