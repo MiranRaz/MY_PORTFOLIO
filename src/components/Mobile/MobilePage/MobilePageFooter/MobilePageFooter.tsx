@@ -1,12 +1,106 @@
 import { Button, Grid } from '@mui/material';
+import { useState } from 'react';
 import bckgMobile from '../../../../assets/mobile/bckgMobile.png';
 import bckMobileBelow from '../../../../assets/mobile/bckMobileBelow.png';
 import call from '../../../../assets/mobile/call.png';
 import contacts from '../../../../assets/mobile/contacts.png';
-import mail from '../../../../assets/mobile/mail.png';
 import settings from '../../../../assets/mobile/settings.png';
+import { FooterContentDialog } from './FooterContentDialog';
+import linkedin from '../../../../assets/global/lnkdn.png';
+import github from '../../../../assets/global/github.png';
+import mail from '../../../../assets/global/email.png';
+import email from '../../../../assets/mobile/mail.png';
+import reactIcon from '../../../../assets/global/react.png';
+import angularIcon from '../../../../assets/global/angular.svg';
+import remixIcon from '../../../../assets/global/remix.png';
+import muiIcon from '../../../../assets/global/MUI.png';
+import dotnetIcon from '../../../../assets/global/NET.png';
+import mssqlIcon from '../../../../assets/global/mssql.png';
 
 export const MobilePageFooter = () => {
+  const [openInfo, setOpenInfo] = useState<boolean>(false);
+
+  const contactInfo = [
+    {
+      label: 'Email',
+      icon: mail,
+      link: 'mailto:miranraznatovic@gmail.com',
+    },
+    {
+      label: 'LinkedIn',
+      icon: linkedin,
+      link: 'https://www.linkedin.com/in/miran-raznatovic/',
+    },
+    {
+      label: 'GitHub',
+      icon: github,
+      link: 'https://github.com/MiranRaz',
+    },
+  ];
+
+  // const skills = [
+  //   {
+  //     label: 'React',
+  //     icon: reactIcon,
+  //   },
+  //   {
+  //     label: 'Angular',
+  //     icon: angularIcon,
+  //   },
+  //   {
+  //     label: 'Remix.js',
+  //     icon: remixIcon,
+  //   },
+  //   {
+  //     label: 'HTML & CSS',
+  //     icon: remixIcon,
+  //   },
+  //   {
+  //     label: 'JS & TS',
+  //     icon: remixIcon,
+  //   },
+  //   {
+  //     label: 'Material-UI',
+  //     icon: muiIcon,
+  //   },
+  //   {
+  //     label: 'Tailwind',
+  //     icon: muiIcon,
+  //   },
+  //   {
+  //     label: 'Bootstrap',
+  //     icon: muiIcon,
+  //   },
+  //   {
+  //     label: '.NET',
+  //     icon: dotnetIcon,
+  //   },
+  //   {
+  //     label: 'MSSQL',
+  //     icon: mssqlIcon,
+  //   },
+  //   {
+  //     label: 'Docker',
+  //     icon: muiIcon,
+  //   },
+  //   {
+  //     label: 'GIT',
+  //     icon: muiIcon,
+  //   },
+  //   {
+  //     label: 'Photoshop',
+  //     icon: muiIcon,
+  //   },
+  //   {
+  //     label: 'DaVinci Resolve',
+  //     icon: muiIcon,
+  //   },
+  //   {
+  //     label: 'Logic Pro X',
+  //     icon: muiIcon,
+  //   },
+  // ];
+
   return (
     <>
       <Grid
@@ -25,21 +119,31 @@ export const MobilePageFooter = () => {
             justifyItems: 'center',
           }}
         >
-          <Button disableRipple>
+          <Button
+            disableRipple
+            onClick={() => {
+              setOpenInfo(true);
+            }}
+          >
             <img
               src={call}
-              alt="asd"
+              alt="Call"
               style={{
                 width: '46px',
                 height: '46px',
                 padding: '8px 0px',
               }}
             />
+            <FooterContentDialog
+              openInfo={openInfo}
+              setOpenInfo={setOpenInfo}
+              project={contactInfo}
+            />
           </Button>
           <Button disableRipple>
             <img
-              src={mail}
-              alt="asd"
+              src={email}
+              alt="Mail"
               style={{
                 width: '46px',
                 height: '46px',
@@ -50,7 +154,7 @@ export const MobilePageFooter = () => {
           <Button disableRipple>
             <img
               src={contacts}
-              alt="asd"
+              alt="Contacts"
               style={{
                 width: '46px',
                 height: '46px',
@@ -61,13 +165,18 @@ export const MobilePageFooter = () => {
           <Button disableRipple>
             <img
               src={settings}
-              alt="asd"
+              alt="Settings"
               style={{
                 width: '46px',
                 height: '46px',
                 padding: '8px 0px',
               }}
             />
+            {/* <FooterContentDialog
+              openInfo={openInfo}
+              setOpenInfo={setOpenInfo}
+              project={skills}
+            /> */}
           </Button>
         </Grid>
       </Grid>
@@ -128,7 +237,7 @@ export const MobilePageFooter = () => {
               fontSize: '13px',
             }}
           >
-            Knowledge
+            Skills
           </div>
         </Grid>
       </Grid>

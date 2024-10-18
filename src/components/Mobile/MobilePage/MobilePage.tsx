@@ -54,9 +54,10 @@ const MobilePage = () => {
           flexDirection: 'row',
           alignItems: 'center',
           justifyContent: 'space-between',
+          borderBottom: '1px solid gray',
         }}
       >
-        <Grid>
+        <Grid sx={{ display: 'flex' }}>
           <img
             src={logo_dark}
             alt={'logo'}
