@@ -6,11 +6,11 @@ import { ClickAwayListener } from "@mui/base/ClickAwayListener";
 const Skills = () => {
   const [isVisible, setIsVisible] = useState(false);
 
-  const skills = {
-    "Front-end": ["HTML & CSS", "React", "Next.js", "Gatsby", "Material-UI"],
-    "Back-end": [".NET"],
-    "Databases": ["MSSQL", "Docker"],
-  };
+  // const skills = {
+  //   "Front-end": ["HTML & CSS", "React", "Next.js", "Gatsby", "Material-UI"],
+  //   "Back-end": [".NET"],
+  //   "Databases": ["MSSQL", "Docker"],
+  // };
 
   return (
     <ClickAwayListener onClickAway={() => setIsVisible(false)}>

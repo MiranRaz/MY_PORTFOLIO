@@ -10,12 +10,6 @@ import linkedin from '../../../../assets/global/lnkdn.png';
 import github from '../../../../assets/global/github.png';
 import mail from '../../../../assets/global/email.png';
 import email from '../../../../assets/mobile/mail.png';
-import reactIcon from '../../../../assets/global/react.png';
-import angularIcon from '../../../../assets/global/angular.svg';
-import remixIcon from '../../../../assets/global/remix.png';
-import muiIcon from '../../../../assets/global/MUI.png';
-import dotnetIcon from '../../../../assets/global/NET.png';
-import mssqlIcon from '../../../../assets/global/mssql.png';
 
 export const MobilePageFooter = () => {
   const [openInfo, setOpenInfo] = useState<boolean>(false);
